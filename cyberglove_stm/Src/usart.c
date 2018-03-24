@@ -119,8 +119,20 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 // przekierowuje printf na UART2
+ int _write(int file, char *ptr, int len)
+ {
+ HAL_UART_Transmit(&huart2, ptr, len, 50);
+ return len;
+ }
+
+ /*Dla SWV
 int _write(int file, char *ptr, int len)
 {
-	HAL_UART_Transmit(&huart2, ptr, len, 50);
+	int i;
+	for(i=0; i < len; i++)
+	{
+		ITM_SendChar(*ptr++);
+	}
 	return len;
 }
+ */
