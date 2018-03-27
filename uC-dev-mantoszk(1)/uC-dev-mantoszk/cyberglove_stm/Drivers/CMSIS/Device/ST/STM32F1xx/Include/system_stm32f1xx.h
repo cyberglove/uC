@@ -1,16 +1,14 @@
 /**
   ******************************************************************************
-  * File Name          : USART.h
-  * Description        : This file provides code for the configuration
-  *                      of the USART instances.
+  * @file    system_stm32f10x.h
+  * @author  MCD Application Team
+  * @version V4.2.0
+  * @date    31-March-2017
+  * @brief   CMSIS Cortex-M3 Device Peripheral Access Layer System Header File.
   ******************************************************************************
-  ** This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
+  * @attention
   *
-  * COPYRIGHT(c) 2018 STMicroelectronics
+  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -36,47 +34,83 @@
   *
   ******************************************************************************
   */
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __usart_H
-#define __usart_H
+
+/** @addtogroup CMSIS
+  * @{
+  */
+
+/** @addtogroup stm32f10x_system
+  * @{
+  */  
+  
+/**
+  * @brief Define to prevent recursive inclusion
+  */
+#ifndef __SYSTEM_STM32F10X_H
+#define __SYSTEM_STM32F10X_H
+
 #ifdef __cplusplus
  extern "C" {
-#endif
+#endif 
 
-/* Includes ------------------------------------------------------------------*/
-#include "stm32f1xx_hal.h"
-#include "main.h"
+/** @addtogroup STM32F10x_System_Includes
+  * @{
+  */
 
-/* USER CODE BEGIN Includes */
+/**
+  * @}
+  */
 
-/* USER CODE END Includes */
 
-extern UART_HandleTypeDef huart2;
+/** @addtogroup STM32F10x_System_Exported_types
+  * @{
+  */
 
-/* USER CODE BEGIN Private defines */
+extern uint32_t SystemCoreClock;          /*!< System Clock Frequency (Core Clock) */
+extern const uint8_t  AHBPrescTable[16U];  /*!< AHB prescalers table values */
+extern const uint8_t  APBPrescTable[8U];   /*!< APB prescalers table values */
 
-/* USER CODE END Private defines */
+/**
+  * @}
+  */
 
-extern void _Error_Handler(char *, int);
+/** @addtogroup STM32F10x_System_Exported_Constants
+  * @{
+  */
 
-void MX_USART2_UART_Init(void);
+/**
+  * @}
+  */
 
-/* USER CODE BEGIN Prototypes */
-int _write(int file, char *ptr, int len);
+/** @addtogroup STM32F10x_System_Exported_Macros
+  * @{
+  */
 
-/* USER CODE END Prototypes */
+/**
+  * @}
+  */
+
+/** @addtogroup STM32F10x_System_Exported_Functions
+  * @{
+  */
+  
+extern void SystemInit(void);
+extern void SystemCoreClockUpdate(void);
+/**
+  * @}
+  */
 
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ usart_H */
+
+#endif /*__SYSTEM_STM32F10X_H */
 
 /**
   * @}
   */
-
+  
 /**
   * @}
-  */
-
+  */  
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
