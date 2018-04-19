@@ -44,7 +44,9 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -124,14 +126,27 @@ int main(void)
 	while(1)
 	{
 		HAL_ADC_Start_IT(&hadc1);
-
+		/*
 		for(uint16_t i=0; i< bend_count+push_count ;++i)
 		{
 			printf("Bend value for %ud. channel: %ud\r\n", (unsigned int) i, (unsigned int) adc_buff[i]);
 		}
 		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 		HAL_Delay(100);
-
+		*/
+		int s;
+		time_t tt;
+		s = time(&tt);
+		srand(s);
+		int tablica[10];
+		for(int i=0; i<10; ++i)
+		{
+			tablica[i]=rand();
+		}
+		printf("%d|%d|%d|%d|%d|%d|%d|%d|%d|%d\r\n",
+				tablica[0], tablica[1], tablica[2], tablica[3], tablica[4], tablica[5],
+				tablica[6], tablica[7], tablica[8], tablica[9]);
+		HAL_Delay(50);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
