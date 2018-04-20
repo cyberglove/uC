@@ -143,10 +143,18 @@ int main(void)
 		{
 			tablica[i]=rand();
 		}
+		/*
 		printf("%d|%d|%d|%d|%d|%d|%d|%d|%d|%d\r\n",
 				tablica[0], tablica[1], tablica[2], tablica[3], tablica[4], tablica[5],
 				tablica[6], tablica[7], tablica[8], tablica[9]);
-		HAL_Delay(50);
+		 */
+
+		for(int i=0; i <10; ++i)
+		{
+			printf("%d|",tablica[i]);
+		}
+		printf("\r\n");
+		HAL_Delay(10);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
