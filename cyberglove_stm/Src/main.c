@@ -119,7 +119,7 @@ int main(void)
 				adc_buff[1], adc_buff[2], adc_buff[3], adc_buff[4], adc_buff[5],
 				adc_buff[6], adc_buff[7], adc_buff[8], adc_buff[9]);
 
-		HAL_Delay(10);
+		HAL_Delay(50);
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */

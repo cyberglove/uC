@@ -8207,8 +8207,8 @@ int main(void)
 				adc_buff[1], adc_buff[2], adc_buff[3], adc_buff[4], adc_buff[5],
 				adc_buff[6], adc_buff[7], adc_buff[8], adc_buff[9]);
 
-		HAL_Delay(10);
- 8002e34:	200a      	movs	r0, #10
+		HAL_Delay(50);
+ 8002e34:	2032      	movs	r0, #50	; 0x32
  8002e36:	f7fd f9eb 	bl	8000210 <HAL_Delay>
 		HAL_ADC_Start_IT(&hadc1);
  8002e3a:	e7d4      	b.n	8002de6 <main+0x36>
